@@ -22,6 +22,8 @@
 		F9B6A1B018289955007D0B88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B6A18F18289955007D0B88 /* UIKit.framework */; };
 		F9B6A1B818289955007D0B88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9B6A1B618289955007D0B88 /* InfoPlist.strings */; };
 		F9B6A1BA18289955007D0B88 /* _11ProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B6A1B918289955007D0B88 /* _11ProjectTests.m */; };
+		F9B6A1C518289B21007D0B88 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B6A1C418289B21007D0B88 /* ThirdViewController.m */; };
+		F9B6A1C818289CF7007D0B88 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B6A1C718289CF7007D0B88 /* FourthViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		F9B6A1B518289955007D0B88 /* 411ProjectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "411ProjectTests-Info.plist"; sourceTree = "<group>"; };
 		F9B6A1B718289955007D0B88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F9B6A1B918289955007D0B88 /* _11ProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _11ProjectTests.m; sourceTree = "<group>"; };
+		F9B6A1C318289B21007D0B88 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		F9B6A1C418289B21007D0B88 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		F9B6A1C618289CF7007D0B88 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		F9B6A1C718289CF7007D0B88 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,10 @@
 				F9B6A1A118289955007D0B88 /* FirstViewController.m */,
 				F9B6A1A318289955007D0B88 /* SecondViewController.h */,
 				F9B6A1A418289955007D0B88 /* SecondViewController.m */,
+				F9B6A1C318289B21007D0B88 /* ThirdViewController.h */,
+				F9B6A1C418289B21007D0B88 /* ThirdViewController.m */,
+				F9B6A1C618289CF7007D0B88 /* FourthViewController.h */,
+				F9B6A1C718289CF7007D0B88 /* FourthViewController.m */,
 				F9B6A1A618289955007D0B88 /* Images.xcassets */,
 				F9B6A19218289955007D0B88 /* Supporting Files */,
 			);
@@ -254,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B6A1C818289CF7007D0B88 /* FourthViewController.m in Sources */,
 				F9B6A1A518289955007D0B88 /* SecondViewController.m in Sources */,
+				F9B6A1C518289B21007D0B88 /* ThirdViewController.m in Sources */,
 				F9B6A19C18289955007D0B88 /* AppDelegate.m in Sources */,
 				F9B6A1A218289955007D0B88 /* FirstViewController.m in Sources */,
 				F9B6A19818289955007D0B88 /* main.m in Sources */,

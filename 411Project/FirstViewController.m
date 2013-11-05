@@ -8,7 +8,13 @@
 
 #import "FirstViewController.h"
 
-@interface FirstViewController ()
+@interface FirstViewController()<UITableViewDataSource, UITableViewDelegate>
+{
+    __weak IBOutlet UITableView *pollTable;
+    NSArray *polls;
+    
+}
+    
 
 @end
 
@@ -18,6 +24,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    polls = @[@"Poll1", @"Poll2", @"Poll3", @"Poll4", @"Poll5", @"Poll6", @"Poll7", @"Poll8", @"Poll9", @"Poll10"];
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [polls count];
+}
+
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *pollID = @"pollId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: pollID];
+    if (cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier: pollID];
+    }
+    cell.textLabel.text = [polls objectAtIndex: indexPath.row];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning
