@@ -11,6 +11,7 @@
 @interface SecondViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
     NSArray *contacts;
+    NSArray *cSections;
     __weak IBOutlet UITableView *contactTable;
 }
 @end
@@ -22,12 +23,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    contacts = @[@"Steve", @"Creeper", @"Zombie", @"Zombie Pigman", @"Skull", @"Wither Skull", @"Ender", @"Blaze", @"Ghast", @"Slime"];
+    contacts = @[@[@"Blaze"], @[@"Creeper"], @[@"Ender"], @[@"Ghast"], @[@"Steve", @"Skeleton", @"Slime"], @[@"Wither Skeleton"], @[@"Zombie", @"Zombie Pigman"]];
+    cSections = @[@"B", @"C", @"E", @"G", @"S", @"W", @"Z"];
 }
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return cSections;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [cSections count];
+}
+
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [contacts count];
+    return [contacts[section] count];
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return cSections[section];
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -37,7 +54,7 @@
     if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier: contactID];
     }
-    cell.textLabel.text = [contacts objectAtIndex: indexPath.row];
+    [cell.textLabel setText: contacts[indexPath.section][indexPath.row]];
     return cell;
 }
 
