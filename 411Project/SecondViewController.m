@@ -10,23 +10,20 @@
 
 @interface SecondViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
-    NSArray *contacts;
-    NSArray *cSections;
     NSDictionary *cAlpha;
+    NSArray *contacts;
     __weak IBOutlet UITableView *contactTable;
 }
 @end
 
 @implementation SecondViewController
-
+//@synthesize contacts;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    contacts = @[@"Creeper", @"Ender", @"Ghast", @"Steve", @"Skeleton", @"Slime", @"Wither Skeleton", @"Zombie", @"Zombie Pigman", @"Villager"];
-    //contacts = @[@[@"Blaze"], @[@"Creeper"], @[@"Ender"], @[@"Ghast"], @[@"Steve", @"Skeleton", @"Slime"], @[@"Wither Skeleton"], @[@"Zombie", @"Zombie Pigman"]];
-    cSections = @[@"B", @"C", @"E", @"G", @"S", @"W", @"Z"];
+    // Do any additional setup after loading the view, typically from a nib.
+    contacts = @[@"Zombie Pigman", @"Blaze", @"Creeper", @"Ender", @"Ghast", @"Steve", @"Skeleton", @"Slime", @"Wither Skeleton", @"Villager", @"Zombie"];
     cAlpha = [self makecAlpha: contacts];
 }
 
@@ -38,7 +35,8 @@
         NSString *firstLetter = [[item substringToIndex:1] uppercaseString];
         if ([buffer objectForKey:firstLetter]) {
             [(NSMutableArray *)[buffer objectForKey:firstLetter] addObject:item];
-        } else {
+        }
+        else {
             NSMutableArray *mutableArray = [[NSMutableArray alloc] initWithObjects:item, nil];
             [buffer setObject:mutableArray forKey:firstLetter];
         }
@@ -86,6 +84,27 @@
     NSArray *keys = [[cAlpha allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     NSString *key = [keys objectAtIndex:section];
     return key;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+//The configuration for section index data
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return [[NSArray arrayWithObject:UITableViewIndexSearch] arrayByAddingObjectsFromArray:[[UILocalizedIndexedCollation currentCollation] sectionIndexTitles]];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    NSArray *unsortedA = [cAlpha allKeys];
+    NSArray *sorted = [unsortedA sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    NSArray *alphabet = [[NSArray arrayWithObject:UITableViewIndexSearch] arrayByAddingObjectsFromArray:[[UILocalizedIndexedCollation currentCollation] sectionIndexTitles]];
+    NSUInteger ret = [sorted indexOfObject:[alphabet objectAtIndex: index]];
+    if (ret>26) ret = 0;// -1 because we add the search symbol
+    return ret;
 }
 
 - (void)didReceiveMemoryWarning

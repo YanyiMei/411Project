@@ -125,6 +125,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="QUy-BD-bpt" id="G9b-6J-2dF"/>
+                                    <outlet property="delegate" destination="QUy-BD-bpt" id="Soa-vp-8Zq"/>
                                 </connections>
                             </tableView>
                         </subviews>
