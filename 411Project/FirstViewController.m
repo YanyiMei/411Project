@@ -26,9 +26,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     polls = @[@"Poll1", @"Poll2", @"Poll3", @"Poll4", @"Poll5", @"Poll6", @"Poll7", @"Poll8", @"Poll9", @"Poll10"];
-    //polls = @[@[@"Poll1", @"Poll2", @"Poll3"], @[@"Poll4", @"Poll5"], @[@"Poll6", @"Poll7", @"Poll8", @"Poll9"], @[@"Poll10"]];
     pSections = @[@"tag1", @"tag2", @"tag3", @"tag4"];
 }
+
+#pragma mark - Cell generation.
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -50,6 +51,8 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+#pragma mark - Possible further changes: adding a sort by tag: see polls in differnent tables???
 
 - (void)didReceiveMemoryWarning
 {

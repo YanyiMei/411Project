@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Item0</key>
+	<string>Zombie Pigman</string>
+	<key>Item1</key>
+	<string>Blaze</string>
+	<key>Item2</key>
+	<string>Creeper</string>
+	<key>Item3</key>
+	<string>Enderman</string>
+	<key>Item4</key>
+	<string>Ghast</string>
+	<key>Item5</key>
+	<string>Steve</string>
+	<key>Item6</key>
+	<string>Skeleton</string>
+	<key>Item7</key>
+	<string>Slime</string>
+	<key>Item8</key>
+	<string>Wither Skeleton</string>
+	<key>Item9</key>
+	<string>Villager</string>
+	<key>Item10</key>
+	<string>Zombie</string>
+	<key>Item11</key>
+	<string>Magma Cube</string>
+	<key>Item12</key>
+	<string>Bat</string>
+	<key>Item13</key>
+	<string>Witch</string>
+</dict>
+</plist>
